@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record model="ir.actions.act_window" id="helpdesk_ticket_action">
+      <field name="name">HelpDesk Ticket</field>
+      <field name="res_model">helpdesk.ticket</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem name="Helpdesk" id="helpdesk_menu"
+        action="helpdesk.helpdesk_ticket_action" sequence="5"
+        />
+
+  <record model="ir.ui.view" id="helpdesk_ticket_view_form">
+      <field name="name">helpdesk ticket view form</field>
+      <field name="model">helpdesk.ticket</field>
+      <field name="arch" type="xml">
+          <form string="Helpdesk Ticket">
+              <sheet>
+                <h1>
+                  <field name="name" />
+                </h1>
+                  <group>
+                    <field name="partner_id" string="Customer"/>
+                    <field name="description" />
+                    <field name="date_deadline" />
+                    <field name="priority" />
+                    <field name="team_id" />
+                  </group>
+              </sheet>
+              <div class="oe_chatter">
+                  <field name="message_follower_ids" widget="mail_followers"/>
+                  <field name="activity_ids" widget="mail_activity"/>
+                  <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+              </div>
+          </form>
+      </field>
+  </record>
+
+  <record model="ir.ui.view" id="helpdesk_ticket_view_tree">
+      <field name="name">helpdesk ticket view tree</field>
+      <field name="model">helpdesk.ticket</field>
+      <field name="arch" type="xml">
+          <tree string="Helpdesk Tickets">
+              <field name="name"/>
+              <field name="partner_id" />
+              <field name="description" />
+              <field name="date_deadline" />
+              <field name="priority" />
+          </tree>
+      </field>
+  </record>
+
+  <record model="ir.ui.view" id="helpdesk_ticket_view_search">
+      <field name="name">helpdesk ticket view search</field>
+      <field name="model">helpdesk.ticket</field>
+      <field name="arch" type="xml">
+          <search string="Helpdesk Tickets">
+              <field name="name"/>
+              <field name="partner_id" />
+              <field name="description" />
+              <separator/>
+              <filter string="Very Hight Priority" name="very_hight_priority"
+                domain="[('priority', '=', '3')]" />
+              <filter string="Date limit" name="date_limit" date="date_deadline"/>
+          </search>
+      </field>
+  </record>
+
+</odoo>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record model="ir.actions.act_window" id="helpdesk_team_action">
+      <field name="name">HelpDesk Team</field>
+      <field name="res_model">helpdesk.team</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem name="Teams" id="helpdesk_team_menu"
+        action="helpdesk.helpdesk_team_action" sequence="5"
+        parent="helpdesk.helpdesk_menu"
+        />
+
+  <record model="ir.ui.view" id="helpdesk_team_view_form">
+      <field name="name">helpdesk team view form</field>
+      <field name="model">helpdesk.team</field>
+      <field name="arch" type="xml">
+          <form string="Helpdesk Ticket">
+              <sheet>
+                <h1>
+                  <field name="name" />
+                </h1>
+                  <group>
+                    <field name="user_ids" string="Members" widget="many2many_tags"/>
+                  </group>
+              </sheet>
+              <div class="oe_chatter">
+                  <field name="message_follower_ids" widget="mail_followers"/>
+                  <field name="activity_ids" widget="mail_activity"/>
+                  <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+              </div>
+          </form>
+      </field>
+  </record>
+
+  <record model="ir.ui.view" id="helpdesk_team_view_tree">
+      <field name="name">helpdesk team view tree</field>
+      <field name="model">helpdesk.team</field>
+      <field name="arch" type="xml">
+          <tree string="Helpdesk Teams">
+              <field name="name"/>
+              <field name="user_ids" widget="many2many_tags" />
+          </tree>
+      </field>
+  </record>
+
+</odoo>
