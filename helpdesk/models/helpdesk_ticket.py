@@ -20,7 +20,7 @@ class HelpdeskTicket(models.Model):
 
     code = fields.Char(
         string='Code',
-        default=_('New'))
+        default='New')
     name = fields.Char(string='Name', required=True)
     description = fields.Text('Description')
     date_deadline = fields.Datetime('Date limit')
