@@ -8,12 +8,14 @@
     "version": "12.0.1.0.0",
     "category": "Customer Relationship Management",
     "website": "",
-    "author": "Dario Lodeiros Vazquez <dariodafoz@gmail.com>",
+    "author": "Dario Lodeiros Vazquez <dariodafoz@gmail.com>,"
+              "Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "data": [
         "data/ir_sequence_data.xml",
         "security/helpdesk_security.xml",
         "security/ir.model.access.csv",
+        "views/helpdesk_menu_views.xml",
         "views/helpdesk_ticket_views.xml",
         "views/helpdesk_team_views.xml",
         "views/helpdesk_stage_views.xml",
