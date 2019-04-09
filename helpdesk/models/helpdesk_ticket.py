@@ -46,6 +46,17 @@ class HelpdeskTicket(models.Model):
         comodel_name='helpdesk.stage',
         group_expand='_read_group_stage_ids',
         string='Stage')
+    # Campos nuevos creados para la tarea '1. Causas Helpdesk'
+    cause_id =fields.Many2one(
+        comodel_name='helpdesk.cause',
+        string='Cause')
+    decision = fields.Text()
+    action_ids = fields.One2many(
+        comodel_name='helpdesk.action',
+        inverse_name='ticket_id',
+        string='Action')
+
+
 
     def assign_to_me(self):
         self.write({'user_id': self.env.uid})
