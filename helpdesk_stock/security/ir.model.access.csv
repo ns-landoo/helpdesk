@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-user_helpdesk_stock_picking_return,user_helpdesk_stock_picking_return,model_helpdesk_stock_picking_return,helpdesk.group_user_helpdesk,1,1,1,0
-access_helpdesk_stock_picking_return_admin,access_helpdesk_stock_picking_return_admin,model_helpdesk_stock_picking_return,helpdesk.group_manager_helpdesk,1,1,1,1

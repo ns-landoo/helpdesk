@@ -1,3 +1,4 @@
 # -*- coding: utf-8 -*-
 
-from . import helpdesk_stock_picking_return
+from . import stock_picking
+from . import helpdesk_ticket
