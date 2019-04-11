@@ -16,8 +16,8 @@
         'helpdesk'
     ],
     'data': [
-        'data/helpdesk_ticket.xml',
-        'data/stock_picking.xml',
+        'views/helpdesk_ticket.xml',
+        'views/stock_picking.xml',
         'wizards/stock_picking_return_wizard.xml'
     ],
 
