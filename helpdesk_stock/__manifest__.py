@@ -18,7 +18,8 @@
     'data': [
         'views/helpdesk_ticket.xml',
         'views/stock_picking.xml',
-        'wizards/stock_picking_return_wizard.xml'
+        'wizards/stock_picking_return_wizard.xml',
+        'report/inherit_report_picking.xml',
     ],
 
 }

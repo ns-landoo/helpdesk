@@ -1,0 +1,8 @@
+<odoo>
+        <template id="report_picking_ticket" inherit_id="stock.report_picking">
+            <xpath expr="//td[@name='td_sched_date']" position="after">
+                <h3>Nº Ticket:</h3>
+                <h3 t-field="o.ticket_id"/>
+            </xpath>
+        </template>
+</odoo>
