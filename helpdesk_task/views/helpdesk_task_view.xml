@@ -5,6 +5,7 @@
             <field name="name">helpdesk.ticket.inherit.view.form</field>
             <field name="model">helpdesk.task</field>
             <field name="inherit_id" ref="helpdesk.ticket_view_form"/>
+            <field name="priority" eval="20"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='partner_id']"  position="after">
                     <field name="project_id"/>
