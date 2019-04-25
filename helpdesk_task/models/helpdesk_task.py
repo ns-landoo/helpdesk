@@ -5,25 +5,23 @@ from odoo import api, fields, models, _
 
 
 class HelpdeskTask(models.Model):
-
     _name = 'helpdesk.task'
     _description = 'Helpdesk Task'
     _inherit = 'helpdesk.ticket'
 
-
-    project_id = fields.Many2one(comodel_name="project.project",
-                                 string="project",
+    project_id = fields.Many2one(comodel_name='project.project',
+                                 string='project',
                                  required=False)
     task_id = fields.Many2one(comodel_name="project.task",
                               string="task",
                               required=True)
     planned_hours = fields.Float(string='planned hours',
-                                related='task_id.planned_hours',
-                                readonly=True)
+                                 related='task_id.planned_hours',
+                                 readonly=True)
 
-    effective_hours = fields.Float(string='planned hours',
-                                related='task_id.effective_hours',
-                                readonly=True)
+    effective_hours = fields.Float(string='effective hours',
+                                   related='task_id.effective_hours',
+                                   readonly=True)
 
     timesheet_ids = fields.One2many(comodel_name='project.task',
                                     inverse_name='task_id',
