@@ -12,7 +12,7 @@ class HelpdeskTask(models.Model):
     project_id = fields.Many2one(comodel_name='project.project',
                                  string='project',
                                  required=False)
-    task_id = fields.Many2one(comodel_name="project.task",
+    task_id = fields.Many2one(comodel_name='project.task',
                               string='task',
                               required=True)
     planned_hours = fields.Float(string='planned hours',
