@@ -15,8 +15,8 @@
         'helpdesk',
         'helpdesk_stock'
     ],
-    'data':[
-         'views/helpdesk_task_view.xml',
-         'security/ir.model.access.csv',
+    'data': [
+        'views/helpdesk_task_view.xml',
+        'security/ir.model.access.csv',
     ],
 }
