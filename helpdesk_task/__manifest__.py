@@ -8,8 +8,8 @@
     'license': "AGPL-3",
     'category': 'Uncategorized',
     'version': "12.0.1.0.0",
-    "application": False,
-    "installable": True,
+    'application': False,
+    'installable': True,
     'depends': [
         'sale_timesheet',
         'project',
