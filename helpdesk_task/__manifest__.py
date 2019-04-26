@@ -11,6 +11,7 @@
     "application": False,
     "installable": True,
     'depends': [
+        'sale_timesheet',
         'project',
         'helpdesk',
         'helpdesk_stock'
