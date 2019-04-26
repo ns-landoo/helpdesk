@@ -9,21 +9,21 @@ class HelpdeskTask(models.Model):
     _inherit = 'helpdesk.ticket'
 
     project_id = fields.Many2one(comodel_name='project.project',
-                                 string='project',
+                                 string='Project',
                                  required=False)
     task_id = fields.Many2one(comodel_name='project.task',
-                              string='task',
+                              string='Task',
                               required=True)
-    planned_hours = fields.Float(string='planned hours',
+    planned_hours = fields.Float(string='Planned hours',
                                  related='task_id.planned_hours',
                                  readonly=True)
 
-    effective_hours = fields.Float(string='effective hours',
+    effective_hours = fields.Float(string='Effective hours',
                                    related='task_id.effective_hours',
                                    readonly=True)
 
     timesheet_ids = fields.One2many(comodel_name='project.task',
                                     inverse_name='task_id',
-                                    string='timesheet',
+                                    string='Timesheet',
                                     related='task_id.timesheet_ids',
                                     required=True)
