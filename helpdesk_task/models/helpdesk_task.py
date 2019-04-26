@@ -5,8 +5,7 @@ from odoo import api, fields, models, _
 
 
 class HelpdeskTask(models.Model):
-    _name = 'helpdesk.task'
-    _description = 'Helpdesk Task'
+   
     _inherit = 'helpdesk.ticket'
 
     project_id = fields.Many2one(comodel_name='project.project',
