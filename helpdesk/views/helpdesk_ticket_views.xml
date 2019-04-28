@@ -149,7 +149,7 @@
             <field name="name">Tickets</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">helpdesk.ticket</field>
-            <field name="view_mode">pivot,kanban,tree,form</field>
+            <field name="view_mode">tree,pivot,kanban,form</field>
             <field name="view_type">form</field>
         </record>
 

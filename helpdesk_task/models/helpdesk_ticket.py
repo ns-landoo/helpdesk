@@ -4,8 +4,8 @@
 from odoo import api, fields, models, _
 
 
-class HelpdeskTask(models.Model):
-   
+class HelpdeskTicket(models.Model):
+
     _inherit = 'helpdesk.ticket'
 
     project_id = fields.Many2one(comodel_name='project.project',
@@ -22,8 +22,6 @@ class HelpdeskTask(models.Model):
                                    related='task_id.effective_hours',
                                    readonly=True)
 
-    timesheet_ids = fields.One2many(comodel_name='project.task',
-                                    inverse_name='task_id',
+    timesheet_ids = fields.One2many(comodel_name='account.analytic.line',
                                     string='Timesheet',
-                                    related='task_id.timesheet_ids',
-                                    required=True)
+                                    related='task_id.timesheet_ids',)
